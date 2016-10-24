@@ -10,9 +10,10 @@ namespace NeutoniumDemo.App_Start
     internal class ConventionRouter
     {
         private readonly INavigationBuilder _Builder;
-        private readonly Func<string,string> _Pattern;
+        private readonly string _Pattern;
+        private const string ViewModel = "ViewModel";
 
-        internal ConventionRouter(INavigationBuilder builder, Func<string, string> pattern)
+        internal ConventionRouter(INavigationBuilder builder, string pattern)
         {
             _Builder = builder;
             _Pattern = pattern;
@@ -21,7 +22,11 @@ namespace NeutoniumDemo.App_Start
         internal void Register<T>(string id=null)
         {
             var name = typeof(T).Name;
-            _Builder.Register<T>(_Pattern(name), id);
+            if (name.EndsWith(ViewModel)) {
+                name = name.Substring(0, name.Length - ViewModel.Length);
+            }
+
+            _Builder.Register<T>(string.Format(_Pattern,name), id);
         }
     }
 }
