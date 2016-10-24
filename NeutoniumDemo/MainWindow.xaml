@@ -1,0 +1,22 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NeutoniumDemo"
+        xmlns:WPF="clr-namespace:Neutronium.WPF;assembly=Neutronium.WPF" x:Class="NeutoniumDemo.MainWindow"
+        mc:Ignorable="d"
+        Icon="Content\logo.png"
+        Visibility="{Binding ElementName=HtmlView, Path=IsHTMLLoaded, Converter={StaticResource BooleanToVisibilityConverter}}"
+        Title="MainWindow">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2000"/>
+            <ColumnDefinition  Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <WPF:HTMLViewControl Grid.Column="0" DataContext="{Binding Path=Menu}" x:Name="Menu" RelativeSource="View\Menu\Index.html" IsDebug="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <WPF:HTMLWindow Grid.Column="1" x:Name="HtmlView" IsDebug="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+    </Grid>
+</Window>
