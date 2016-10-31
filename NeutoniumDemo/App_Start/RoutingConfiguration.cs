@@ -7,10 +7,10 @@ namespace NeutoniumDemo.App_Start
     {
         public static void Register(INavigationBuilder builder)
         {
-            var router = new ConventionRouter(builder, @"View\{0}\index.HTML");
-            router.Register<Page1ViewModel>();
-            router.Register<Page2ViewModel>();
-            router.Register<AboutViewModel>();
+            var router = new ConventionRouter(builder, @"View\{0}\dist\index.HTML");
+            //router.Register<Page1ViewModel>();
+            //router.Register<Page2ViewModel>();
+            //router.Register<AboutViewModel>();
         }
     }
 }

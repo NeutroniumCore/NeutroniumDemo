@@ -153,6 +153,11 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="View\Menu\.babelrc" />
+    <None Include="View\Menu\data\data.json" />
+    <None Include="View\Menu\package.json" />
+    <None Include="View\Menu\README.md" />
+    <None Include="View\Menu\src\App.vue" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -164,15 +169,28 @@
     <Content Include="View\About\Index.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Menu\js\script.js">
+    <Content Include="View\Menu\.gitignore" />
+    <Content Include="View\Menu\dist\810a1b930979de83478be0f458b51dd8.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Menu\Index.html">
+    <Content Include="View\Menu\dist\build.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Menu\style\Style.css">
+    <Content Include="View\Menu\dist\index.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="View\Menu\dist\styles.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Menu\dist\test.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Menu\index.html" />
+    <Resource Include="View\Menu\src\assets\logo.png" />
+    <Content Include="View\Menu\src\entry.js" />
+    <Content Include="View\Menu\src\main.js" />
+    <Content Include="View\Menu\utils.js" />
+    <Content Include="View\Menu\webpack.config.js" />
     <Content Include="View\Page1\Index.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

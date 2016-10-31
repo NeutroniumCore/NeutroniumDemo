@@ -15,7 +15,7 @@
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
         
-        <WPF:HTMLViewControl Grid.Column="0" DataContext="{Binding Path=Menu}" x:Name="Menu" RelativeSource="View\Menu\Index.html" IsDebug="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <WPF:HTMLViewControl Grid.Column="0" DataContext="{Binding Path=Menu}" x:Name="Menu" RelativeSource="View\Menu\dist\Index.html" IsDebug="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         <WPF:HTMLWindow Grid.Column="1" x:Name="HtmlView" IsDebug="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 
     </Grid>
