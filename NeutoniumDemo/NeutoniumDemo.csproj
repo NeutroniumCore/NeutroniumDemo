@@ -201,7 +201,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="View\Menu\index.html" />
-    <Resource Include="View\Menu\src\assets\logo.png" />
     <Content Include="View\Menu\src\entry.js" />
     <Content Include="View\Menu\src\main.js" />
     <Content Include="View\Menu\utils.js" />
