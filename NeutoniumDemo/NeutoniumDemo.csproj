@@ -155,6 +155,18 @@
     <AppDesigner Include="Properties\" />
     <None Include="View\Menu\.babelrc" />
     <None Include="View\Menu\data\data.json" />
+    <Content Include="View\Menu\dist\674f50d287a8c48dc19ba404d20fe713.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Menu\dist\af7ae505a9eed503f8b8e6982036873e.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Menu\dist\b06871f281fee6b241d60582ae9369b9.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Menu\dist\fee66e712a8a08eef5805a46892932ad.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="View\Menu\package.json" />
     <None Include="View\Menu\README.md" />
     <None Include="View\Menu\src\App.vue" />
@@ -171,6 +183,9 @@
     </Content>
     <Content Include="View\Menu\.gitignore" />
     <Content Include="View\Menu\dist\810a1b930979de83478be0f458b51dd8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Menu\dist\912ec66d7572ff821749319396470bde.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="View\Menu\dist\build.js">
