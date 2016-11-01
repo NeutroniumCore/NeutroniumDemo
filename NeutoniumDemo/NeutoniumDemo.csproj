@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Neutronium.JavascriptFramework.Vue.0.2.1\build\Neutronium.JavascriptFramework.Vue.props" Condition="Exists('..\packages\Neutronium.JavascriptFramework.Vue.0.2.1\build\Neutronium.JavascriptFramework.Vue.props')" />
+  <Import Project="..\packages\Neutronium.JavascriptFramework.Vue.0.2.2\build\Neutronium.JavascriptFramework.Vue.props" Condition="Exists('..\packages\Neutronium.JavascriptFramework.Vue.0.2.2\build\Neutronium.JavascriptFramework.Vue.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -42,7 +42,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="ChromiumFXRenderProcess, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\Neutronium.WebBrowserEngine.ChromiumFx.0.2.1\lib\ChromiumFXRenderProcess.exe</HintPath>
+      <HintPath>..\packages\Neutronium.WebBrowserEngine.ChromiumFx.0.2.2\lib\ChromiumFXRenderProcess.exe</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ChromiumWebBrowser, Version=3.2526.3.0, Culture=neutral, processorArchitecture=x86">
@@ -57,24 +57,24 @@
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Neutronium.Core, Version=0.1.1.0, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\Neutronium.Core.0.1.1\lib\Neutronium.Core.dll</HintPath>
+    <Reference Include="Neutronium.Core, Version=0.1.2.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\Neutronium.Core.0.1.2\lib\Neutronium.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Neutronium.JavascriptFramework.Vue, Version=0.2.1.0, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\Neutronium.JavascriptFramework.Vue.0.2.1\lib\Neutronium.JavascriptFramework.Vue.dll</HintPath>
+    <Reference Include="Neutronium.JavascriptFramework.Vue, Version=0.2.2.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\Neutronium.JavascriptFramework.Vue.0.2.2\lib\Neutronium.JavascriptFramework.Vue.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Neutronium.MVVMComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <HintPath>..\packages\Neutronium.MVVMComponents.0.1.0\lib\Neutronium.MVVMComponents.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Neutronium.WebBrowserEngine.ChromiumFx, Version=0.2.1.0, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\Neutronium.WebBrowserEngine.ChromiumFx.0.2.1\lib\Neutronium.WebBrowserEngine.ChromiumFx.dll</HintPath>
+    <Reference Include="Neutronium.WebBrowserEngine.ChromiumFx, Version=0.2.2.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\Neutronium.WebBrowserEngine.ChromiumFx.0.2.2\lib\Neutronium.WebBrowserEngine.ChromiumFx.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Neutronium.WPF, Version=0.2.1.0, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\Neutronium.WPF.0.2.1\lib\Neutronium.WPF.dll</HintPath>
+    <Reference Include="Neutronium.WPF, Version=0.2.2.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\Neutronium.WPF.0.2.2\lib\Neutronium.WPF.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
@@ -167,9 +167,15 @@
     <Content Include="View\Menu\dist\fee66e712a8a08eef5805a46892932ad.woff">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="View\Menu\dist\styles.css.map" />
     <None Include="View\Menu\package.json" />
     <None Include="View\Menu\README.md" />
     <None Include="View\Menu\src\App.vue" />
+    <None Include="View\Menu\src\components\Expandable.vue" />
+    <None Include="View\Menu\src\components\ExpandableMenu.vue" />
+    <None Include="View\Menu\src\components\FinalMenu.vue" />
+    <None Include="View\Menu\src\components\Hello.vue" />
+    <None Include="View\Menu\src\components\SideMenu.vue" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -225,7 +231,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Unofficial.Chromiumfx.3.2526.4\build\Unofficial.Chromiumfx.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Unofficial.Chromiumfx.3.2526.4\build\Unofficial.Chromiumfx.targets'))" />
-    <Error Condition="!Exists('..\packages\Neutronium.JavascriptFramework.Vue.0.2.1\build\Neutronium.JavascriptFramework.Vue.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Neutronium.JavascriptFramework.Vue.0.2.1\build\Neutronium.JavascriptFramework.Vue.props'))" />
+    <Error Condition="!Exists('..\packages\Neutronium.JavascriptFramework.Vue.0.2.2\build\Neutronium.JavascriptFramework.Vue.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Neutronium.JavascriptFramework.Vue.0.2.2\build\Neutronium.JavascriptFramework.Vue.props'))" />
   </Target>
   <Import Project="..\packages\Unofficial.Chromiumfx.3.2526.4\build\Unofficial.Chromiumfx.targets" Condition="Exists('..\packages\Unofficial.Chromiumfx.3.2526.4\build\Unofficial.Chromiumfx.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

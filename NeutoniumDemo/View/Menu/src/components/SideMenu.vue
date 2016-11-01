@@ -71,12 +71,17 @@ export default {
 @import '~bulma/bulma';
 @import '~font-awesome/css/font-awesome.css';
 
+html {
+  overflow-y: hidden;
+  overflow-x: hidden; 
+}
+
 .app-sidebar {
   position: fixed;
   top: 0px;
   left: 0;
   bottom: 0;
-  padding: 20px 0 50px;
+  padding: 0px 0 50px;
   width: 180px;
   max-height: 100vh;
   z-index: 1024 - 1;

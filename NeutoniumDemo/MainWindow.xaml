@@ -7,15 +7,15 @@
         xmlns:WPF="clr-namespace:Neutronium.WPF;assembly=Neutronium.WPF" x:Class="NeutoniumDemo.MainWindow"
         mc:Ignorable="d"
         Icon="Content\logo.png"
-        Visibility="{Binding ElementName=HtmlView, Path=IsHTMLLoaded, Converter={StaticResource BooleanToVisibilityConverter}}"
-        Title="MainWindow">
+        Visibility="{Binding ElementName=Menu, Path=IsHTMLLoaded, Converter={StaticResource BooleanToVisibilityConverter}}"
+        Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="180"/>
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        <WPF:HTMLViewControl Grid.Column="0" DataContext="{Binding Path=Menu}" IsDebug="True" x:Name="Menu" RelativeSource="View\Menu\dist\Index.html" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+        <WPF:HTMLViewControl Grid.Column="0" DataContext="{Binding Path=Menu}" IsDebug="False" x:Name="Menu" RelativeSource="View\Menu\dist\Index.html" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         <WPF:HTMLWindow Grid.Column="1" x:Name="HtmlView" IsDebug="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 
     </Grid>

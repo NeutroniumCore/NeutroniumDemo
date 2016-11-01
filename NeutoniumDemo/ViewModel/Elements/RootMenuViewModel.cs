@@ -14,12 +14,15 @@ namespace NeutoniumDemo.ViewModel.Elements
 
         private readonly INavigator _Navigator;
 
+        private FinalMenuView _CurrentMenu;
+
         public RootMenuViewModel(INavigator navigator)
         {
             _Navigator = navigator;
             Navigate = new RelayCommand<FinalMenuView>(
                 menu => 
                 {
+                    _CurrentMenu = menu;
                     _Navigator.Navigate(menu.TargetedViewModel);
                 });
         }
