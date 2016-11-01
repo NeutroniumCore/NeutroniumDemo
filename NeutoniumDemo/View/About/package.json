@@ -1,5 +1,5 @@
 {
-  "name": "menu",
+  "name": "about",
   "description": "A Vue.js neutronium project",
   "author": "david",
   "private": true,
@@ -8,8 +8,6 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "bulma": "^0.2.3",
-    "font-awesome": "^4.7.0",
     "vue": "^2.0.3"
   },
   "devDependencies": {

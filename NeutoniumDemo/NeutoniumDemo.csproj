@@ -153,8 +153,38 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="View\About\.babelrc" />
+    <None Include="View\About\data\data.json" />
+    <Content Include="View\About\dist\styles.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="View\About\package.json" />
+    <None Include="View\About\README.md" />
+    <None Include="View\About\src\App.vue" />
     <None Include="View\Menu\.babelrc" />
     <None Include="View\Menu\data\data.json" />
+    <Content Include="View\About\dist\810a1b930979de83478be0f458b51dd8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\About\.gitignore" />
+    <Content Include="View\About\dist\build.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\About\dist\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\About\dist\styles.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\About\dist\test.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\About\index.html" />
+    <Resource Include="View\About\src\assets\logo.png" />
+    <Content Include="View\About\src\entry.js" />
+    <Content Include="View\About\src\main.js" />
+    <Content Include="View\About\utils.js" />
+    <Content Include="View\About\webpack.config.js" />
     <Content Include="View\Menu\dist\674f50d287a8c48dc19ba404d20fe713.eot">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -184,9 +214,6 @@
     <Content Include="Content\logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\About\Index.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="View\Menu\.gitignore" />
     <Content Include="View\Menu\dist\810a1b930979de83478be0f458b51dd8.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -211,12 +238,6 @@
     <Content Include="View\Menu\src\main.js" />
     <Content Include="View\Menu\utils.js" />
     <Content Include="View\Menu\webpack.config.js" />
-    <Content Include="View\Page1\Index.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="View\Page2\Index.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Micro.MVVM\Micro.MVVM.csproj">
@@ -224,7 +245,10 @@
       <Name>Micro.MVVM</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="View\Page1\" />
+    <Folder Include="View\Page2\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
