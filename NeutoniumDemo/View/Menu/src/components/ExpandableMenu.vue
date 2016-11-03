@@ -10,10 +10,10 @@
         <expandable v-if="menuData.Children.length || menuData.SubMenu.length" v-show="isExpanded(menuData)">
           <ul >
             <li v-for="subItem in menuData.SubMenu">
-              <expandable-menu :menu-data="subItem" :navigate="navigate" :getIcone="getIcone" :selected="selected">
+              <expandable-menu :menu-data="subItem" :root="root" :getIcone="getIcone">
               </expandable-menu>
             </li>
-            <final-menu :menuData="menuData" :navigate="navigate" :getIcone="getIcone" :selected="selected">
+            <final-menu :menuData="menuData" :root="root" :getIcone="getIcone">
             </final-menu>
           </ul>
         </expandable>
@@ -37,15 +37,14 @@ export default {
       type: Object,
       required: true
     },
-    navigate: {
-      type: Function,
+    root: {
+      type: Object,
       required: true
     },
     getIcone: {
       type: Function,
       required: true
-    },
-    selected: Object
+    }
   },
 
   methods: {

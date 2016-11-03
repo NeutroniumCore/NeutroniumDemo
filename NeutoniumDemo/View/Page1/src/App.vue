@@ -1,14 +1,7 @@
 <template>
   <div>
     <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Related Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" >Vue Core Docs</a></li>
-      <li><a href="https://github.com/David-Desmaisons/Neutronium">Neutronium</a></li>
-      <li><a href="https://github.com/David-Desmaisons/neutronium-vue">Neutronium Vue template</a></li>
-      <li><a href="https://github.com/David-Desmaisons/NeutoniumDemo">Project Repo</a></li>
-    </ul>
+    <h1>Page 1</h1>
   </div>
 </template>
 

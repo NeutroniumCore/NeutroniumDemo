@@ -5,10 +5,10 @@
     </p>
     <ul class="menu-list">
       <li v-for="item in menuData.SubMenu">
-        <expandable-menu :menu-data="item" :navigate="navigate" :getIcone="getIcone" :selected="selected">
+        <expandable-menu :menu-data="item" :root="menuData" :getIcone="getIcone">
         </expandable-menu>
       </li>
-      <final-menu :menu-data="menuData" :navigate="navigate" :getIcone="getIcone" :selected="selected">
+      <final-menu :menu-data="menuData" :root="menuData" :getIcone="getIcone">
       </final-menu>
     </ul>
   </aside>
@@ -17,6 +17,7 @@
 <script>
 import ExpandableMenu from './ExpandableMenu'
 import FinalMenu from './FinalMenu'
+import icones from '../../data/descriptorToIcone'
 
 export default {
   name: 'SideMenu',
@@ -28,11 +29,10 @@ export default {
 
   data(){
     return {
-      icones:{
+      icones: {
         About: 'home',
         Pages: 'television'
-      },
-      selected: null
+      }
     }
   },
 
@@ -51,11 +51,6 @@ export default {
 
     toggle (item) {
       item.Expanded = !item.Expanded
-    },
-
-    navigate (item) {
-      this.selected = item
-      this.menuData.Navigate.Execute(item)
     },
 
     getIcone (item) {

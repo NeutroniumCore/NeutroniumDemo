@@ -32,7 +32,8 @@ namespace NeutoniumDemo.ViewModel
             {
                 new FinalMenuView<AboutViewModel>
                 {
-                    Name= "About"
+                    Name= "About",
+                    Descriptor= "About"
                 }
             };
         }

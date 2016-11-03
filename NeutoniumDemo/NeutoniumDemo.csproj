@@ -143,6 +143,62 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="View\Page1\.gitignore" />
+    <Content Include="View\Page1\dist\810a1b930979de83478be0f458b51dd8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Page1\dist\build.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Page1\dist\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Page1\dist\styles.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Page1\dist\test.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Page1\index.html" />
+    <Content Include="View\Page2\.gitignore" />
+    <Content Include="View\Page2\dist\810a1b930979de83478be0f458b51dd8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Page2\dist\build.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Page2\dist\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Page2\dist\styles.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Page2\dist\test.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Page2\index.html" />
+    <Resource Include="View\Page2\src\assets\logo.png" />
+    <Content Include="View\Page2\src\entry.js" />
+    <Content Include="View\Page2\src\main.js" />
+    <Content Include="View\Page2\utils.js" />
+    <Content Include="View\Page2\webpack.config.js" />
+    <None Include="View\Menu\data\descriptorToIcone.json" />
+    <Content Include="View\Page1\dist\styles.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="View\Page2\.babelrc" />
+    <None Include="View\Page2\data\data.json" />
+    <Content Include="View\Page2\dist\styles.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="View\Page2\package.json" />
+    <None Include="View\Page2\README.md" />
+    <None Include="View\Page2\src\App.vue" />
+    <Resource Include="View\Page1\src\assets\logo.png" />
+    <Content Include="View\Page1\src\entry.js" />
+    <Content Include="View\Page1\src\main.js" />
+    <Content Include="View\Page1\utils.js" />
+    <Content Include="View\Page1\webpack.config.js" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -180,6 +236,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="View\About\index.html" />
+    <None Include="View\Page1\.babelrc" />
+    <None Include="View\Page1\data\data.json" />
+    <None Include="View\Page1\package.json" />
+    <None Include="View\Page1\README.md" />
+    <None Include="View\Page1\src\App.vue" />
     <Resource Include="View\About\src\assets\logo.png" />
     <Content Include="View\About\src\entry.js" />
     <Content Include="View\About\src\main.js" />
@@ -204,7 +265,6 @@
     <None Include="View\Menu\src\components\Expandable.vue" />
     <None Include="View\Menu\src\components\ExpandableMenu.vue" />
     <None Include="View\Menu\src\components\FinalMenu.vue" />
-    <None Include="View\Menu\src\components\Hello.vue" />
     <None Include="View\Menu\src\components\SideMenu.vue" />
   </ItemGroup>
   <ItemGroup>
@@ -245,10 +305,7 @@
       <Name>Micro.MVVM</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\Page1\" />
-    <Folder Include="View\Page2\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

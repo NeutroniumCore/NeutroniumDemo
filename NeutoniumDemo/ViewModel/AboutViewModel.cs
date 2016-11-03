@@ -2,6 +2,6 @@
 {
     public class AboutViewModel 
     {
-        public string msg { get; set; } = "Hello Neutronium";
+        public string msg { get; set; } = "Neutronium Demo Application- made By David Desmaisons";
     }
 }

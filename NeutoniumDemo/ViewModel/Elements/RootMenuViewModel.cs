@@ -1,30 +1,36 @@
-﻿using Micro.MVVM.Relay;
-using NeutoniumDemo.Application.Navigation;
+﻿using NeutoniumDemo.Application.Navigation;
 using System.Collections.Generic;
-using System.Windows.Input;
+using Micro.MVVM;
 
 namespace NeutoniumDemo.ViewModel.Elements
 {
-    public class RootMenuViewModel
+    public class RootMenuViewModel : ViewModelBase
     {
+        private readonly INavigator _Navigator;
+
         public List<FinalMenuView> Children { get; set; } = new List<FinalMenuView>();
         public List<MenuViewModel> SubMenu { get; set; } = new List<MenuViewModel>();
 
-        public ICommand Navigate { get; private set; }
-
-        private readonly INavigator _Navigator;
-
         private FinalMenuView _CurrentMenu;
+        public FinalMenuView CurrentMenuView 
+        {
+            get { return _CurrentMenu;}
+            set {
+                if (Set(ref _CurrentMenu, value) && (value!=null)) 
+                {
+                    //Temporary Neutronium will call
+                    //all property setter on UI thread
+                    System.Windows.Application.Current.Dispatcher.Invoke(() => 
+                    {
+                        _Navigator.Navigate(_CurrentMenu.TargetedViewModel);
+                    });                
+                }
+            }
+        }
 
         public RootMenuViewModel(INavigator navigator)
         {
             _Navigator = navigator;
-            Navigate = new RelayCommand<FinalMenuView>(
-                menu => 
-                {
-                    _CurrentMenu = menu;
-                    _Navigator.Navigate(menu.TargetedViewModel);
-                });
         }
     }
 }

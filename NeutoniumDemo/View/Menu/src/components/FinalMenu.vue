@@ -1,7 +1,7 @@
 <template>
 <div v-if="menuData.Children.length>0">
   <li v-for="item in menuData.Children">
-    <a @click.prevent="navigate(item)" :class="{'is-active': (selected == item? true : false) }">
+    <a @click.prevent="root.CurrentMenuView = item" class="menu-item" :class="{'is-active': (root.CurrentMenuView == item? true : false) }">
       <span class="icon is-small"><i :class="['fa', 'fa-'+ getIcone(item)]"></i></span>
       {{ item.Name }}
     </a>
@@ -16,18 +16,21 @@ export default {
       type: Object,
       required: true
     },
-    navigate: {
-      type: Function,
+    root: {
+      type: Object,
       required: true
     },
     getIcone: {
       type: Function,
       required: true
-    },
-    selected: Object
+    }
   }
 }
 </script>
 
 <style lang="scss">
+.menu-item {
+  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+}
 </style>

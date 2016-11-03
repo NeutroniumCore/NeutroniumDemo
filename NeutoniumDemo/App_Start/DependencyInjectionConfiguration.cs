@@ -16,7 +16,6 @@ namespace NeutoniumDemo.App_Start
 
         public static void RegisterDependency(IKernel kernel, INavigator navigator)
         {
-            //kernel.Bind<IInterface>.To<Implementation>();
             kernel.Bind<INavigator>().ToConstant(navigator);
         }
     }
