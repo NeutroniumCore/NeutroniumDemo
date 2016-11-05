@@ -1,16 +1,21 @@
 <template>
-  <div>
-    <img src="./assets/logo.png">
-    <h1>Page 1</h1>
-  </div>
+ <neutronium-main-window name="fade" :main-view-model="viewModel">
+      <img src="./assets/logo.png">
+      <h1>Page 1</h1>
+  </neutronium-main-window>
 </template>
 
 <script>
+import NeutroniumMainWindow from 'neutronium-main-window'
+
 const props={
   viewModel: Object,
 };
 
 export default {
+  components:{
+    NeutroniumMainWindow
+  },
   name: 'app',
   props,
   data () {
@@ -27,6 +32,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
 }
 
 img {

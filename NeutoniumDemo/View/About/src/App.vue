@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <neutronium-main-window name="fade" :main-view-model="viewModel">
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
     <h2>Related Links</h2>
@@ -9,15 +9,20 @@
       <li><a href="https://github.com/David-Desmaisons/neutronium-vue">Neutronium Vue template</a></li>
       <li><a href="https://github.com/David-Desmaisons/NeutoniumDemo">Project Repo</a></li>
     </ul>
-  </div>
+  </neutronium-main-window>
 </template>
 
 <script>
+import NeutroniumMainWindow from 'neutronium-main-window'
+
 const props={
   viewModel: Object,
 };
 
 export default {
+  components:{
+      NeutroniumMainWindow
+  },
   name: 'app',
   props,
   data () {
@@ -27,6 +32,15 @@ export default {
 </script>
 
 <style>
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+
+
 #main {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
