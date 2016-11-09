@@ -1,13 +1,13 @@
 <template>
       <li>
-       <a @click.prevent="toggle(menuData)" :aria-expanded="isExpanded(menuData) ? 'true' : 'false'">
+       <a @click.prevent="toggle(menuData)" :aria-expanded="menuData.Expanded ? 'true' : 'false'">
           <span class="icon is-small"><i :class="['fa', 'fa-'+getIcone(menuData)]"></i></span>
           {{ menuData.Name }}
           <span class="icon is-small is-angle">
             <i class="fa fa-angle-down"></i>
           </span>
         </a>
-        <expandable v-if="menuData.Children.length || menuData.SubMenu.length" v-show="isExpanded(menuData)">
+        <expandable v-if="menuData.Children.length || menuData.SubMenu.length" v-show="menuData.Expanded">
           <ul >
             <li v-for="subItem in menuData.SubMenu">
               <expandable-menu :menu-data="subItem" :root="root" :getIcone="getIcone">
@@ -48,10 +48,6 @@ export default {
   },
 
   methods: {
-    isExpanded (item) {
-      return item.Expanded
-    },
-
     toggle (item) {
       item.Expanded = !item.Expanded
     }

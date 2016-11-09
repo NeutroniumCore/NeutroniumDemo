@@ -1,6 +1,8 @@
 ﻿using NeutoniumDemo.Application.Navigation;
 using System.Collections.Generic;
 using Micro.MVVM;
+using System;
+using System.Threading.Tasks;
 
 namespace NeutoniumDemo.ViewModel.Elements
 {
@@ -18,12 +20,18 @@ namespace NeutoniumDemo.ViewModel.Elements
             set {
                 if (Set(ref _CurrentMenu, value) && (value!=null)) 
                 {
+                    Func<Task> dispatch = async () =>
+                    {
+                        _CurrentMenu.IsLoading = true;
+                        await _Navigator.Navigate(_CurrentMenu.TargetedViewModel);
+                        _CurrentMenu.IsLoading = false;
+                    };
+
+
+                    Delegate del = dispatch;
                     //Temporary Neutronium will call
                     //all property setter on UI thread
-                    System.Windows.Application.Current.Dispatcher.Invoke(() => 
-                    {
-                        _Navigator.Navigate(_CurrentMenu.TargetedViewModel);
-                    });                
+                    System.Windows.Application.Current.Dispatcher.BeginInvoke(del);   
                 }
             }
         }
