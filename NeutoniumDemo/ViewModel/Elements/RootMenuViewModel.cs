@@ -20,20 +20,16 @@ namespace NeutoniumDemo.ViewModel.Elements
             set {
                 if (Set(ref _CurrentMenu, value) && (value!=null)) 
                 {
-                    Func<Task> dispatch = async () =>
-                    {
-                        _CurrentMenu.IsLoading = true;
-                        await _Navigator.Navigate(_CurrentMenu.TargetedViewModel);
-                        _CurrentMenu.IsLoading = false;
-                    };
-
-
-                    Delegate del = dispatch;
-                    //Temporary Neutronium will call
-                    //all property setter on UI thread
-                    System.Windows.Application.Current.Dispatcher.BeginInvoke(del);   
+                    Nagigate(value.TargetedViewModel);
                 }
             }
+        }
+
+        private async void Nagigate(Type type)
+        {
+            _CurrentMenu.IsLoading = true;
+            await _Navigator.Navigate(type);
+            _CurrentMenu.IsLoading = false;
         }
 
         public RootMenuViewModel(INavigator navigator)
