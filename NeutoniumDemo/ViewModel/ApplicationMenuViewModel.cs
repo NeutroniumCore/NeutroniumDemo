@@ -23,6 +23,10 @@ namespace NeutoniumDemo.ViewModel
                         new FinalMenuView<Page2ViewModel>
                         {
                             Name= "Page2"
+                        },
+                        new FinalMenuView<Page3ViewModel>
+                        {
+                            Name= "Page3"
                         }
                     }
                 }

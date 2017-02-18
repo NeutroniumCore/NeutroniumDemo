@@ -10,6 +10,7 @@ namespace NeutoniumDemo.App_Start
             var router = new ConventionRouter(builder, @"View\{0}\dist\index.HTML");
             router.Register<Page1ViewModel>();
             router.Register<Page2ViewModel>();
+            router.Register<Page3ViewModel>();
             router.Register<AboutViewModel>();
         }
     }
