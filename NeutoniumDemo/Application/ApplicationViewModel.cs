@@ -5,18 +5,18 @@ using System;
 
 namespace NeutoniumDemo.Application
 {
-    public class ApplicationViewModel<T> 
+    public class ApplicationViewModel<TMenu> 
     {
         private readonly Navigator _Navigator;
         private readonly IServiceLocator _Locator;
 
-        public T Menu { get; private set; }
+        public TMenu Menu { get; private set; }
 
         public ApplicationViewModel(INavigationSolver solver, Func<INavigator, IServiceLocator> LocatorBuilder)
         {
             _Navigator = new Navigator(solver, LocatorBuilder);
             _Locator = _Navigator.ServiceLocator;
-            Menu = _Locator.GetInstance<T>();
+            Menu = _Locator.GetInstance<TMenu>();
         }
     }
 }

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Micro.MVVM;
 using System;
-using System.Threading.Tasks;
 
 namespace NeutoniumDemo.ViewModel.Elements
 {
@@ -14,11 +13,12 @@ namespace NeutoniumDemo.ViewModel.Elements
         public List<MenuViewModel> SubMenu { get; set; } = new List<MenuViewModel>();
 
         private FinalMenuView _CurrentMenu;
-        public FinalMenuView CurrentMenuView 
+        public FinalMenuView CurrentMenuView
         {
-            get { return _CurrentMenu;}
-            set {
-                if (Set(ref _CurrentMenu, value) && (value!=null)) 
+            get { return _CurrentMenu; }
+            set
+            {
+                if (Set(ref _CurrentMenu, value) && (value != null))
                 {
                     Nagigate(value.TargetedViewModel);
                 }

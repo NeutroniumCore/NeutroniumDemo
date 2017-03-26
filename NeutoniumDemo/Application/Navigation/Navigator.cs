@@ -12,9 +12,9 @@ namespace NeutoniumDemo.Application.Navigation
         private readonly INavigationSolver _NavigationSolver;
         private IHTMLBinding _CurrentBinding;
 
-        public event EventHandler<NavigationEvent> OnNavigate;
+        internal IServiceLocator ServiceLocator { get; }
 
-        internal IServiceLocator ServiceLocator { get; private set; }
+        public event EventHandler<NavigationEvent> OnNavigate;
 
         public Navigator(INavigationSolver navigationSolver, Func<INavigator, IServiceLocator> LocatorBuilder)
         {
