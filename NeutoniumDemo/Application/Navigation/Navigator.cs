@@ -18,7 +18,7 @@ namespace NeutoniumDemo.Application.Navigation
 
         public Navigator(INavigationSolver navigationSolver, Func<INavigator, IServiceLocator> LocatorBuilder)
         {
-            ServiceLocator = LocatorBuilder(this) ?? new TrivialServiceLocator();        
+            ServiceLocator = LocatorBuilder(this) ?? new TrivialServiceLocator();
             _NavigationSolver = navigationSolver;
             _NavigationSolver.OnNavigate += OnNavigationSolverNavigate;
         }
@@ -28,35 +28,26 @@ namespace NeutoniumDemo.Application.Navigation
             OnNavigate?.Invoke(this, e);
         }
 
-        public async Task Navigate(object ViewModel, string id =null)
+        public async Task Navigate(object ViewModel, string id = null)
         {
             var oldBinding = _CurrentBinding;
             _CurrentBinding = await _NavigationSolver.NavigateAsync(ViewModel, id);
             oldBinding?.Dispose();
         }
 
-        public async Task Navigate<T>(string id = null)
+        public async Task Navigate<T>(NavigationContext<T> context = null)
         {
-            var vm = ServiceLocator.GetInstance<T>();
-            await Navigate(vm, id); 
+            var resolutionKey = context?.ResolutionKey;
+            var vm = (resolutionKey != null) ? ServiceLocator.GetInstance<T>() : ServiceLocator.GetInstance<T>(resolutionKey);
+            context?.BeforeNavigate(vm);
+            await Navigate(vm, context?.Id);
         }
 
-        public async Task Navigate<T>(string resolutionKey, string id = null)
+        public async Task Navigate(Type type, NavigationContext context = null)
         {
-            var vm = ServiceLocator.GetInstance<T>(resolutionKey);
-            await Navigate(vm, id);
-        }
-
-        public async Task Navigate(Type type, string id = null)
-        {
-            var vm = ServiceLocator.GetInstance(type);
-            await Navigate(vm, id);
-        }
-
-        public async Task Navigate(Type type, string resolutionKey, string id = null)
-        {
-            var vm = ServiceLocator.GetInstance(type, resolutionKey);
-            await Navigate(vm, id);
+            var resolutionKey = context?.ResolutionKey;
+            var vm = (resolutionKey != null) ? ServiceLocator.GetInstance(type) : ServiceLocator.GetInstance(type, resolutionKey);
+            await Navigate(vm, context?.Id);
         }
     }
 }

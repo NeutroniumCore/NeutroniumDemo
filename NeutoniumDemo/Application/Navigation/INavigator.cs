@@ -8,13 +8,9 @@ namespace NeutoniumDemo.Application.Navigation
     {
         Task Navigate(object ViewModel, string id = null);
 
-        Task Navigate<T>(string id = "");
+        Task Navigate<T>(NavigationContext<T> navigate = null);
 
-        Task Navigate<T>(string resolutionKey, string id = null);
-
-        Task Navigate(Type type, string id = null);
-
-        Task Navigate(Type type, string resolutionKey, string id = null);
+        Task Navigate(Type type, NavigationContext context = null);
 
         event EventHandler<NavigationEvent> OnNavigate;
     }

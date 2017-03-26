@@ -105,6 +105,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Application\Navigation\NavigationContext.cs" />
     <Compile Include="ViewModel\ApplicationMenuViewModel.cs" />
     <Compile Include="ViewModel\Elements\FinalMenuView_T.cs" />
     <Compile Include="ViewModel\Elements\RootMenuViewModel.cs" />
