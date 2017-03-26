@@ -1,5 +1,6 @@
 ﻿using NeutoniumDemo.ViewModel;
 using Neutronium.Core.Navigation;
+using Neutronium.Core.Navigation.Routing;
 
 namespace NeutoniumDemo.App_Start
 {
@@ -7,11 +8,11 @@ namespace NeutoniumDemo.App_Start
     {
         public static void Register(INavigationBuilder builder)
         {
-            var router = new ConventionRouter(builder, @"View\{0}\dist\index.HTML");
-            router.Register<Page1ViewModel>();
-            router.Register<Page2ViewModel>();
-            router.Register<Page3ViewModel>();
-            router.Register<AboutViewModel>();
+            var convention = builder.GetTemplateConvention(@"View\{vm}\dist\index.HTML");
+            typeof(RoutingConfiguration).GetTypesFromSameAssembly()
+                                        .InNamespace("NeutoniumDemo.ViewModel")
+                                        .Except(typeof(ApplicationMenuViewModel))
+                                        .Register(convention);
         }
     }
 }

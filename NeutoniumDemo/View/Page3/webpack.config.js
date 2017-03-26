@@ -33,27 +33,6 @@ var webpackOptions = {
           ]
         }
       },
-      { 
-        test: /\.css$/, 
-        loader: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: ["css"]
-        }) 
-      },
-      {
-        test: [/\.scss$/ , /\.sass$/],
-        loader: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use:  [ 'css?sourceMap', 'less?sourceMap' ]
-        })
-      },
-      {
-        test: /\.less$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: ['css?sourceMap', 'sass?sourceMap' ]
-        })
-      },
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -95,8 +74,9 @@ var webpackOptions = {
   devtool: 'source-map',
 }
 
-
+var buildMode = false;
 if (process.env.NODE_ENV === 'production') {
+  buildMode=true
   webpackOptions.externals={
     'vue' : 'Vue'
   }
@@ -129,4 +109,7 @@ if (process.env.NODE_ENV === 'production') {
   }
   webpackOptions.entry= './src/main.js';
 }
+const styleOption = buildMode? { sourceMap: true, extract: true } : { sourceMap: true};
+webpackOptions.module.rules = webpackOptions.module.rules.concat(utils.styleLoaders(styleOption))
+
 module.exports = webpackOptions
