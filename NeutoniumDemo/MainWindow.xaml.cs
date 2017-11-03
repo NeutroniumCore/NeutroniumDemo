@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Windows;
 using NeutroniumDemo.Application;
 using NeutroniumDemo.ViewModel;
 
 namespace NeutroniumDemo
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {

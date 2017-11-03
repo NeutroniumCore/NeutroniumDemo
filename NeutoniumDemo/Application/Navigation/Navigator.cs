@@ -28,17 +28,17 @@ namespace NeutroniumDemo.Application.Navigation
             OnNavigate?.Invoke(this, e);
         }
 
-        public async Task Navigate(object ViewModel, string id = null)
+        public async Task Navigate(object viewModel, string id = null)
         {
             var oldBinding = _CurrentBinding;
-            _CurrentBinding = await _NavigationSolver.NavigateAsync(ViewModel, id);
+            _CurrentBinding = await _NavigationSolver.NavigateAsync(viewModel, id);
             oldBinding?.Dispose();
         }
 
         public async Task Navigate<T>(NavigationContext<T> context = null)
         {
             var resolutionKey = context?.ResolutionKey;
-            var vm = (resolutionKey != null) ? ServiceLocator.GetInstance<T>() : ServiceLocator.GetInstance<T>(resolutionKey);
+            var vm = (resolutionKey == null) ? ServiceLocator.GetInstance<T>() : ServiceLocator.GetInstance<T>(resolutionKey);
             context?.BeforeNavigate(vm);
             await Navigate(vm, context?.Id);
         }
@@ -46,7 +46,7 @@ namespace NeutroniumDemo.Application.Navigation
         public async Task Navigate(Type type, NavigationContext context = null)
         {
             var resolutionKey = context?.ResolutionKey;
-            var vm = (resolutionKey != null) ? ServiceLocator.GetInstance(type) : ServiceLocator.GetInstance(type, resolutionKey);
+            var vm = (resolutionKey == null) ? ServiceLocator.GetInstance(type) : ServiceLocator.GetInstance(type, resolutionKey);
             await Navigate(vm, context?.Id);
         }
     }
