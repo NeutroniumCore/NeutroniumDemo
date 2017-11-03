@@ -59,9 +59,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Relay\RelayCommand_T.cs" />
     <Compile Include="Relay\SimpleRelayCommand.cs" />
-    <Compile Include="Relay\RelayCommand.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
