@@ -7,7 +7,7 @@
       <li><a target="_blank" href="https://vuejs.org" >Vue Core Docs</a></li>
       <li><a target="_blank" href="https://github.com/David-Desmaisons/Neutronium">Neutronium</a></li>
       <li><a target="_blank" href="https://github.com/David-Desmaisons/neutronium-vue">Neutronium Vue template</a></li>
-      <li><a target="_blank" href="https://github.com/David-Desmaisons/NeutoniumDemo">Project Repo</a></li>
+      <li><a target="_blank" href="https://github.com/David-Desmaisons/NeutroniumDemo">Project Repo</a></li>
     </ul>
   </neutronium-main-window>
 </template>

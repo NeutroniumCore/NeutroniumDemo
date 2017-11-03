@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NeutoniumDemo.Application.Navigation
+namespace NeutroniumDemo.Application.Navigation
 {
     public class NavigationContext
     {

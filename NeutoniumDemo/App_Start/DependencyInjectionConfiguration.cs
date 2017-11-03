@@ -1,9 +1,9 @@
 ﻿using CommonServiceLocator.NinjectAdapter.Unofficial;
 using Microsoft.Practices.ServiceLocation;
-using NeutoniumDemo.Application.Navigation;
+using NeutroniumDemo.Application.Navigation;
 using Ninject;
 
-namespace NeutoniumDemo.App_Start
+namespace NeutroniumDemo
 {
     public static class DependencyInjectionConfiguration
     {

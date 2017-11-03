@@ -1,10 +1,9 @@
-﻿using System.Windows;
-using System;
-using NeutoniumDemo.Application;
-using NeutoniumDemo.App_Start;
-using NeutoniumDemo.ViewModel;
+﻿using System;
+using System.Windows;
+using NeutroniumDemo.Application;
+using NeutroniumDemo.ViewModel;
 
-namespace NeutoniumDemo
+namespace NeutroniumDemo
 {
     public partial class MainWindow : Window
     {

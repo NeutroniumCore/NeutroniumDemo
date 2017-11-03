@@ -1,7 +1,7 @@
-﻿using Micro.MVVM;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Micro.MVVM;
 
-namespace NeutoniumDemo.ViewModel.Elements
+namespace NeutroniumDemo.ViewModel.Elements
 {
     public class MenuViewModel : ViewModelBase
     {

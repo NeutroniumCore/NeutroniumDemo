@@ -1,4 +1,4 @@
-﻿namespace NeutoniumDemo.ViewModel
+﻿namespace NeutroniumDemo.ViewModel
 {
     public class AboutViewModel 
     {

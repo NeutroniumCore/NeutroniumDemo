@@ -1,8 +1,8 @@
-﻿using NeutoniumDemo.Application.Navigation;
-using NeutoniumDemo.ViewModel.Elements;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using NeutroniumDemo.Application.Navigation;
+using NeutroniumDemo.ViewModel.Elements;
 
-namespace NeutoniumDemo.ViewModel
+namespace NeutroniumDemo.ViewModel
 {
     public class ApplicationMenuViewModel : RootMenuViewModel
     {

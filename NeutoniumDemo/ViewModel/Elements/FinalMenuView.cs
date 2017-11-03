@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace NeutoniumDemo.ViewModel.Elements
+﻿namespace NeutroniumDemo.ViewModel.Elements
 {
     public class FinalMenuView<T>: FinalMenuView
     {

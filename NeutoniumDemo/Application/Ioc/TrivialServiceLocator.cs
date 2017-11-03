@@ -1,9 +1,9 @@
-﻿using Microsoft.Practices.ServiceLocation;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Practices.ServiceLocation;
 
-namespace NeutoniumDemo.Application.Ioc
+namespace NeutroniumDemo.Application.Ioc
 {
     public class TrivialServiceLocator : ServiceLocatorImplBase, IServiceLocator
     {

@@ -1,8 +1,8 @@
-﻿using NeutoniumDemo.ViewModel;
+﻿using NeutroniumDemo.ViewModel;
 using Neutronium.Core.Navigation;
 using Neutronium.Core.Navigation.Routing;
 
-namespace NeutoniumDemo.App_Start
+namespace NeutroniumDemo
 {
     public static class RoutingConfiguration
     {
@@ -10,7 +10,7 @@ namespace NeutoniumDemo.App_Start
         {
             var convention = builder.GetTemplateConvention(@"View\{vm}\dist\index.HTML");
             typeof(RoutingConfiguration).GetTypesFromSameAssembly()
-                                        .InNamespace("NeutoniumDemo.ViewModel")
+                                        .InNamespace("NeutroniumDemo.ViewModel")
                                         .Except(typeof(ApplicationMenuViewModel))
                                         .Register(convention);
         }

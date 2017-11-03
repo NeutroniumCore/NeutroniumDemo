@@ -1,12 +1,12 @@
-﻿using Neutronium.Core.Navigation;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using Neutronium.Core.Navigation;
 
-namespace NeutoniumDemo.Application.Navigation
+namespace NeutroniumDemo.Application.Navigation
 {
     public interface INavigator
     {
-        Task Navigate(object ViewModel, string id = null);
+        Task Navigate(object viewModel, string id = null);
 
         Task Navigate<T>(NavigationContext<T> navigate = null);
 

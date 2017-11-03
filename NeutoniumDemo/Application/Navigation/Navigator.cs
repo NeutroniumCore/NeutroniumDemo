@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Neutronium.Core.Navigation;
-using Neutronium.Core;
 using Microsoft.Practices.ServiceLocation;
-using NeutoniumDemo.Application.Ioc;
+using Neutronium.Core;
+using Neutronium.Core.Navigation;
+using NeutroniumDemo.Application.Ioc;
 
-namespace NeutoniumDemo.Application.Navigation
+namespace NeutroniumDemo.Application.Navigation
 {
     public class Navigator : INavigator
     {

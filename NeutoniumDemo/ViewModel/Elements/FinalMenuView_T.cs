@@ -1,7 +1,7 @@
-﻿using Micro.MVVM;
-using System;
+﻿using System;
+using Micro.MVVM;
 
-namespace NeutoniumDemo.ViewModel.Elements
+namespace NeutroniumDemo.ViewModel.Elements
 {
     public class FinalMenuView : ViewModelBase
     {

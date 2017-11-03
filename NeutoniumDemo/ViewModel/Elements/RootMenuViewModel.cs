@@ -1,9 +1,9 @@
-﻿using NeutoniumDemo.Application.Navigation;
+﻿using System;
 using System.Collections.Generic;
 using Micro.MVVM;
-using System;
+using NeutroniumDemo.Application.Navigation;
 
-namespace NeutoniumDemo.ViewModel.Elements
+namespace NeutroniumDemo.ViewModel.Elements
 {
     public class RootMenuViewModel : ViewModelBase
     {
