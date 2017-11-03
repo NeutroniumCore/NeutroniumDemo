@@ -23,7 +23,7 @@ var webpackOptions = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue',
+        loader: 'vue-loader',
         options: {
           loaders: utils.cssLoaders(cssOptionLoader),
           postcss: [
@@ -33,30 +33,9 @@ var webpackOptions = {
           ]
         }
       },
-      { 
-        test: /\.css$/, 
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: "style-loader",
-          loader: ["css"]
-        }) 
-      },
-      {
-        test: [/\.scss$/ , /\.sass$/],
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: "style-loader",
-          loader:  [ 'css?sourceMap', 'less?sourceMap' ]
-        })
-      },
-      {
-        test: /\.less$/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: "style-loader",
-          loader: ['css?sourceMap', 'sass?sourceMap' ]
-        })
-      },
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/
       },
       {
@@ -69,7 +48,11 @@ var webpackOptions = {
       },
       { 
         test: /\.json$/, 
-        loader: 'json' 
+        loader: 'json-loader' 
+      },
+      {
+        test: /\.cjson$/,
+        loader: 'raw-loader'
       },
       {
         test: /\.html$/,
@@ -82,7 +65,7 @@ var webpackOptions = {
     noInfo: true
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json', '.css'],
+    extensions: ['.js', '.vue', '.json', '.css', '.cjson'],
     alias: {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
@@ -95,10 +78,12 @@ var webpackOptions = {
   devtool: 'source-map',
 }
 
-
+var buildMode = false;
 if (process.env.NODE_ENV === 'production') {
+  buildMode=true
   webpackOptions.externals={
-    'vue' : 'Vue'
+    'vue' : 'Vue',
+    'vueHelper' : 'glueHelper'
   }
   webpackOptions.entry= './src/entry.js';
 
@@ -129,4 +114,7 @@ if (process.env.NODE_ENV === 'production') {
   }
   webpackOptions.entry= './src/main.js';
 }
+const styleOption = buildMode? { sourceMap: true, extract: true } : { sourceMap: true};
+webpackOptions.module.rules = webpackOptions.module.rules.concat(utils.styleLoaders(styleOption))
+
 module.exports = webpackOptions

@@ -8,7 +8,7 @@
         </span>
     </a>
   </li>
-  <div>
+</div>
 </template>
 
 <script>

@@ -1,15 +1,16 @@
 <template>
-  <neutronium-main-window name="fade" :main-view-model="viewModel">
-    <img src="./assets/logo.png">
-    <h1>Page 2</h1>
-  </neutronium-main-window>
+    <neutronium-main-window name="fade" :window="__window__">
+        <img src="./assets/logo.png">
+        <h1>Page 2</h1>
+    </neutronium-main-window>
 </template>
 
 <script>
 import NeutroniumMainWindow from 'neutronium-main-window'
 
 const props={
-  viewModel: Object,
+    viewModel: Object,
+    __window__: Object
 };
 
 export default {
@@ -25,41 +26,42 @@ export default {
 </script>
 
 <style>
-#main {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    #main {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .2s
-}
-.fade-enter, .fade-leave-active {
-  opacity: 0
-}
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .2s;
+    }
 
-img {
-  height: 300px;
-}
+    .fade-enter, .fade-leave-active {
+        opacity: 0;
+    }
 
-h1, h2 {
-  font-weight: normal;
-}
+    img {
+        height: 300px;
+    }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+    h1, h2 {
+        font-weight: normal;
+    }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
 
-a {
-  color: #42b983;
-}
+    li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    a {
+        color: #42b983;
+    }
 </style>

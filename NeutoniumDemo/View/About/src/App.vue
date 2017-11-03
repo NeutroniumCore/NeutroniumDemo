@@ -1,5 +1,5 @@
 <template>
-  <neutronium-main-window name="fade" :main-view-model="viewModel">
+  <neutronium-main-window name="fade" :window="__window__">
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
     <h2>Related Links</h2>
@@ -16,7 +16,8 @@
 import NeutroniumMainWindow from 'neutronium-main-window'
 
 const props={
-  viewModel: Object,
+    viewModel: Object,
+    __window__: Object
 };
 
 export default {

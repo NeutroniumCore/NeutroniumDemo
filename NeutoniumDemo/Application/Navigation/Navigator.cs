@@ -10,15 +10,15 @@ namespace NeutoniumDemo.Application.Navigation
     public class Navigator : INavigator
     {
         private readonly INavigationSolver _NavigationSolver;
-        private IHTMLBinding _CurrentBinding;
+        private IHtmlBinding _CurrentBinding;
 
         internal IServiceLocator ServiceLocator { get; }
 
         public event EventHandler<NavigationEvent> OnNavigate;
 
-        public Navigator(INavigationSolver navigationSolver, Func<INavigator, IServiceLocator> LocatorBuilder)
+        public Navigator(INavigationSolver navigationSolver, Func<INavigator, IServiceLocator> locatorBuilder)
         {
-            ServiceLocator = LocatorBuilder(this) ?? new TrivialServiceLocator();
+            ServiceLocator = locatorBuilder(this) ?? new TrivialServiceLocator();
             _NavigationSolver = navigationSolver;
             _NavigationSolver.OnNavigate += OnNavigationSolverNavigate;
         }

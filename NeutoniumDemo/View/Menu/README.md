@@ -1,4 +1,4 @@
-# menu
+# menunew
 
 > A Vue.js neutronium project
 
@@ -12,8 +12,5 @@ npm install
 npm run dev
 
 # build for neutronium with map source file and minification
-npm run build_debug
-
-# build for neutronium with minification
-npm run build_prod
+npm run build
 ```

@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>page1</title>
+    <title>page1new</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
     <div id="main">
-      <App :view-model="$data">
+      <App :view-model="$data.ViewModel" :__window__="$data.Window">
       </App>
     </div>
     <script src="./build.js"></script>

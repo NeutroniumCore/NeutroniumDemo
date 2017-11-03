@@ -51,6 +51,10 @@ var webpackOptions = {
         loader: 'json-loader' 
       },
       {
+        test: /\.cjson$/,
+        loader: 'raw-loader'
+      },
+      {
         test: /\.html$/,
         loader: 'vue-html-loader'
       }
@@ -61,7 +65,7 @@ var webpackOptions = {
     noInfo: true
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json', '.css'],
+    extensions: ['.js', '.vue', '.json', '.css', '.cjson'],
     alias: {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
@@ -78,7 +82,8 @@ var buildMode = false;
 if (process.env.NODE_ENV === 'production') {
   buildMode=true
   webpackOptions.externals={
-    'vue' : 'Vue'
+    'vue' : 'Vue',
+    'vueHelper' : 'glueHelper'
   }
   webpackOptions.entry= './src/entry.js';
 
