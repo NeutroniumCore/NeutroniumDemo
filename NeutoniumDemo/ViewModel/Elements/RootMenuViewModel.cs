@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Micro.MVVM;
 using NeutroniumDemo.Application.Navigation;
 
 namespace NeutroniumDemo.ViewModel.Elements
 {
-    public class RootMenuViewModel : ViewModelBase
+    public class RootMenuViewModel : Vm.Tools.ViewModel
     {
         private readonly INavigator _Navigator;
 

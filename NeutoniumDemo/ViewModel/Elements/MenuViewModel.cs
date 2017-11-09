@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using Micro.MVVM;
 
 namespace NeutroniumDemo.ViewModel.Elements
 {
-    public class MenuViewModel : ViewModelBase
+    public class MenuViewModel : Vm.Tools.ViewModel
     {
         public string Name { get; set; }
 

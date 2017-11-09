@@ -1,9 +1,8 @@
 ﻿using System;
-using Micro.MVVM;
 
 namespace NeutroniumDemo.ViewModel.Elements
 {
-    public class FinalMenuView : ViewModelBase
+    public class FinalMenuView : Vm.Tools.ViewModel
     {
         internal Type TargetedViewModel { get; set; }
 
