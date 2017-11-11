@@ -9,7 +9,7 @@ namespace NeutroniumDemo
     {
         public static IServiceLocator Register(INavigator navigator)
         {
-            IKernel kernel = new StandardKernel();
+            IKernel kernel = new StandardKernel(new NinjectSettings { UseReflectionBasedInjection = true });
             RegisterDependency(kernel, navigator);
             return new NinjectServiceLocator(kernel);
         }
